@@ -71,7 +71,7 @@ export const Navigation = () => {
 
                 <div className="relative z-10 flex items-center lg:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-100 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <span className="sr-only">Open menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -166,8 +166,8 @@ export const Navigation = () => {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        ? "bg-powershop-600 text-white"
+                        : "text-white hover:bg-gray-700 hover:text-white",
                       "block rounded-md py-2 px-3 text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -189,13 +189,13 @@ export const Navigation = () => {
                     <div className="text-base font-medium text-white">
                       {user.name}
                     </div>
-                    <div className="text-sm font-medium text-gray-400">
+                    <div className="text-sm font-medium text-white">
                       {user.email}
                     </div>
                   </div>
                   <button
                     type="button"
-                    className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-powershop-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -207,7 +207,7 @@ export const Navigation = () => {
                       key={item.name}
                       as="a"
                       href={item.href}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:bg-gray-700 hover:text-white"
                     >
                       {item.name}
                     </Disclosure.Button>
@@ -218,7 +218,10 @@ export const Navigation = () => {
           </>
         )}
       </Disclosure>
-      <Addbutton />
+      <div className="mx-auto mt-12 max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-powershop-500 lg:px-8">
+        <h2>Zustand state test</h2>
+        <Addbutton />
+      </div>
     </>
   );
 };
