@@ -44,10 +44,14 @@ export const Navigation = () => {
                 <div className="relative z-10 flex px-2 lg:px-0">
                   <div className="flex flex-shrink-0 items-center">
                     <div className="hidden md:flex">
-                      <Logo color="#FFF" />
+                      <Link href="/">
+                        <Logo color="#FFF" />
+                      </Link>
                     </div>
                     <div className="md:hidden">
-                      <LogoSmall color="#FFF" />
+                      <Link href="/">
+                        <LogoSmall color="#FFF" />
+                      </Link>
                     </div>
                   </div>
                 </div>
