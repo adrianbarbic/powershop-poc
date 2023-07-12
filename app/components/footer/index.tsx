@@ -87,7 +87,7 @@ export const Footer = () => {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <div className="h-7">
-              <Logo color="#FA0E6A" />
+              <Logo color="#FA0E6A" responsive={false} />
             </div>
             <p className="text-sm leading-6 text-gray-600">
               Making the world a better place through constructing elegant

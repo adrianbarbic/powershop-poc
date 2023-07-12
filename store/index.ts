@@ -1,9 +1,11 @@
 import { create } from "zustand";
 
 const store = (set: any) => ({
-  bears: 2,
-  increasePopulation: () => set((state: any) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
+  number: 2,
+  location: "VIC",
+  increment: () => set((state: any) => ({ number: state.number + 1 })),
+  reset: () => set({ number: 0 }),
+  setLocation: (location: string) => set({ location }),
 });
 
 export const useStore = create(store);

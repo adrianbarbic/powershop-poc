@@ -5,15 +5,13 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Logo } from "../logo";
-import { LogoSmall } from "../logo/logo-small";
 import { Addbutton } from "../addbutton";
 import Link from "next/link";
 
 const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  name: "Adrian Barbic",
+  email: "adrianbarbic@gmail.com",
+  imageUrl: "https://avatars.githubusercontent.com/u/296263?s=400&v=4",
 };
 const navigation = [
   { name: "Get connected", href: "/", current: true },
@@ -43,16 +41,7 @@ export const Navigation = () => {
               <div className="relative flex h-16 justify-between">
                 <div className="relative z-10 flex px-2 lg:px-0">
                   <div className="flex flex-shrink-0 items-center">
-                    <div className="hidden md:flex">
-                      <Link href="/">
-                        <Logo color="#FFF" />
-                      </Link>
-                    </div>
-                    <div className="md:hidden">
-                      <Link href="/">
-                        <LogoSmall color="#FFF" />
-                      </Link>
-                    </div>
+                    <Logo color="#FFF" responsive={true} />
                   </div>
                 </div>
 
@@ -93,7 +82,7 @@ export const Navigation = () => {
                 <div className="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
                   <button
                     type="button"
-                    className="flex-shrink-0 rounded-full bg-white p-1 text-powershop-600 hover:text-white hover:bg-powershop-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="flex-shrink-0 rounded-full bg-white p-1 text-powershop-600 hover:text-white hover:bg-powershop-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-powershop-600"
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -177,7 +166,7 @@ export const Navigation = () => {
                     className={classNames(
                       item.current
                         ? "bg-powershop-600 text-white"
-                        : "text-white hover:bg-gray-700 hover:text-white",
+                        : "text-white hover:bg-powershop-600 hover:text-white",
                       "block rounded-md py-2 px-3 text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -205,7 +194,7 @@ export const Navigation = () => {
                   </div>
                   <button
                     type="button"
-                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-powershop-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-powershop-500 hover:powershop-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-powershop-600"
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
