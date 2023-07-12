@@ -62,7 +62,7 @@ export const FeatureSection = () => {
           <img
             src="https://media.powershop.com.au/20220704165427/powershop-phone-app-balance.gif"
             alt="Product screenshot"
-            className="w-[28rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[42rem] md:-ml-4 lg:-ml-0"
+            className="w-[28rem] max-w-none sm:w-[42rem] md:-ml-4 lg:-ml-0"
             width={1000}
             height={700}
           />
