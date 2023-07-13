@@ -7,7 +7,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Logo } from "../logo";
 import { Addbutton } from "../addbutton";
 import Link from "next/link";
-import { useState } from "react";
+import { useStore } from "../../../store";
 
 const user = {
   name: "Adrian Barbic",
@@ -38,11 +38,11 @@ async function getData() {
 }
 
 export const Navigation = () => {
-  const [number, setNumber] = useState(0);
+  const state = useStore((state) => state);
 
   const clickHandler = async () => {
     const getNumber = await getData();
-    setNumber(getNumber);
+    state.setRandom(getNumber);
   };
   return (
     <>
@@ -238,7 +238,7 @@ export const Navigation = () => {
         >
           Random
         </button>
-        {number}
+        {state.random}
       </div>
     </>
   );
