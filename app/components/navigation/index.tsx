@@ -33,9 +33,7 @@ function classNames(...classes: any[]) {
 }
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`);
   return res.json();
 }
 
