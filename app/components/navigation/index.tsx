@@ -7,6 +7,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Logo } from "../logo";
 import { Addbutton } from "../addbutton";
 import Link from "next/link";
+import { useState } from "react";
 
 const user = {
   name: "Adrian Barbic",
@@ -31,7 +32,20 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
+    next: { revalidate: 5 },
+  });
+  return res.json();
+}
+
 export const Navigation = () => {
+  const [number, setNumber] = useState(0);
+
+  const clickHandler = async () => {
+    const getNumber = await getData();
+    setNumber(getNumber);
+  };
   return (
     <>
       <Disclosure as="header" className="bg-powershop-500">
@@ -220,6 +234,13 @@ export const Navigation = () => {
       <div className="mx-auto mt-12 max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-powershop-500 lg:px-8">
         <h2>Zustand state test</h2>
         <Addbutton />
+        <button
+          className="m-2 rounded-md bg-powershop-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-powershop-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={clickHandler}
+        >
+          Random
+        </button>
+        {number}
       </div>
     </>
   );
